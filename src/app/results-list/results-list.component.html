@@ -5,6 +5,27 @@
     <button (click)="nextPage()" [disabled]="!nextUrl">Next</button>
   </div>
 
+  <div *ngFor="let language of languages">
+    <input type="radio"
+           id="{{ groupName + choice }}"
+           name="{{groupName}}"
+           [value]="language"
+           [(ngModel)]="specificLanguage"
+           (change)="changeLanguage()"/>
+    {{language.description}}{{$index}}
+  </div>
+
+
+  <!--<input type="radio"-->
+  <!--id="{{ groupName + choice }}"-->
+  <!--name="{{groupName}}"-->
+  <!--[value]="choice"-->
+  <!--[(ngModel)]="defaultChoice"-->
+  <!--(ngModelChange)="choose($event)"-->
+  <!--[(ngModel)]="specificLanguage"-->
+  <!--(change)="changeLanguage()" />-->
+
+
   <ul>
     <li *ngFor="let item of items">
       <!--<img src="{{item.owner.avatar_url}}"/>-->

@@ -15,14 +15,15 @@ export class ResultsListComponent implements OnInit {
   total = 0;
   topic = '';
   languages = [
-    {description: 'Any', selected: true, language: ''},
-    {description: 'C++', selected: false, language: 'c%2B%2B'},
-    {description: 'C#', selected: false, language: 'c%23'},
-    {description: 'JS', selected: false, language: 'javascript'},
-    {description: 'Java', selected: false, language: 'java'},
-    {description: 'Swift', selected: false, language: 'swift'},
+    {description: 'Any', language: ''},
+    {description: 'C++', language: 'c%2B%2B'},
+    {description: 'C#', language: 'c%23'},
+    {description: 'JS', language: 'javascript'},
+    {description: 'Java', language: 'java'},
+    {description: 'Kotlin', language: 'kotlin'},
+    {description: 'Swift', language: 'swift'},
   ];
-  specificLanguage;
+  specificLanguage = this.languages[0];
 
   constructor(private gitHub: GitHubService) {
   }
