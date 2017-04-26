@@ -1,4 +1,4 @@
-# GH-Stars
+# Stars Material Base
 by @therockncoder aka Troy Miles
 
 GitHub Stars 
