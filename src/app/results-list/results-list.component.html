@@ -1,0 +1,17 @@
+<div>
+  <h2>Total Results: {{total | number }}</h2>
+  <div class="button-row">
+    <button (click)="previousPage()" [disabled]="!previousUrl">Previous</button>
+    <button (click)="nextPage()" [disabled]="!nextUrl">Next</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let item of items">
+      <!--<img src="{{item.owner.avatar_url}}"/>-->
+      <h2> {{item.full_name}}</h2>
+      <span> {{item.stargazers_count | convert2k: false}}, {{item.size | convert2k}}, {{item.language || "N/A"}}</span>
+      <p>{{item.description}}</p>
+      <span>{{item.updated_at}}</span>
+    </li>
+  </ul>
+</div>

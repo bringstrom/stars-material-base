@@ -1,0 +1,61 @@
+
+***************************************************************************************************
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+***************************************************************************************************
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 90%;
+}
+
+nav {
+    background-color: #673ab7;
+}
+
+h1 {
+    display: inline-block;
+}
+***************************************************************************************************
+import {AppMaterialModule} from './app-material/app-material.module';
+***************************************************************************************************
+import {NgModule} from '@angular/core';
+
+import {
+  MdButtonModule,
+  MdIconModule,
+  MdInputModule,
+  MdListModule,
+  MdMenuModule,
+  MdRadioModule,
+} from '@angular/material';
+
+
+@NgModule({
+  imports: [
+    MdButtonModule,
+    MdListModule,
+    MdIconModule,
+    MdMenuModule,
+    MdRadioModule,
+  ],
+  declarations: [],
+  exports: [
+    MdButtonModule,
+    MdInputModule,
+    MdListModule,
+    MdIconModule,
+    MdMenuModule,
+    MdRadioModule,
+  ],
+})
+export class AppMaterialModule {
+}
+***************************************************************************************************
+  <md-radio-group class="example-radio-group" [(ngModel)]="specificLanguage" (change)="changeLanguage()">
+    <md-radio-button class="example-radio-button" *ngFor="let language of languages" [value]="language">
+      {{language.description}}
+    </md-radio-button>
+  </md-radio-group>
